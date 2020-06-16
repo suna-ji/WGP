@@ -1,0 +1,22 @@
+package wpg;
+
+import java.util.ArrayList;
+
+public class Child {
+	public String name;
+	public ArrayList<String> importantPeople;  // 자녀에게 중요한 사람들의 이름
+	public String importantThing; // 자녀가 관심을 갖고 있는 항목의 이름 (예: 인형, 책, 축구공, 비디오 게임)
+	
+	
+	public Child(String name) { //생성자
+		this.name = name;
+		this.importantPeople = new ArrayList<String>();
+	}
+	public ArrayList<String> getImportantPeople() {
+		return importantPeople;
+		
+	}
+	public String getImportantThing(){
+		return importantThing;
+	}
+}

@@ -1,0 +1,39 @@
+package wpg;
+import java.util.*;
+
+public class ChildBuilder extends Builder{
+	private Scanner scanner;
+	private Child child = new Child();
+	@Override
+	public void setName() {
+		System.out.println("자녀의 이름을 입력해주세요.");
+		String childName = scanner.nextLine();
+		child.setName(childName);
+	}
+
+	@Override
+	public void setImportantPeople() {
+		System.out.println("자녀에게 중요한 사람들의 이름을 적어주세요. 입력이 끝났다면 quit를 입력해주세요.");
+		String response = null;
+		while(!"quit".equalsIgnoreCase(response)) {
+			response = scanner.nextLine();
+			if("quit".equalsIgnoreCase(response)) {
+				return;
+			}
+			child.setImportantPeople(response);
+			System.out.println("입력이 끝나지 않았다면 다시 이름을 적어주세요. 만약, 입력이 끝났다면 quit를 입력해주세요.");
+		}
+	}
+
+	@Override
+	public void setImportantThings() {
+		
+	}
+
+	@Override
+	public Object getResult() {
+	}
+	
+	
+
+}

@@ -1,0 +1,30 @@
+package wpg;
+import java.util.*;
+
+public class InteractionWithParent{
+	private Scanner scanner;
+	private Child child;
+	private Problem problem;
+	
+	public InteractionWithParent() {
+		scanner = new Scanner(System.in);
+	}
+	
+	public String getChildName() {
+		System.out.println("자녀의 이름을 입력해주세요.");
+		String childName = scanner.nextLine();
+		return childName;
+	}
+	public String[] getImportantPeople() {
+		String response;
+		while(!"quit".equalsIgnoreCase(response)) {
+			System.out.println("자녀에 중요한 사람들의 이름을 적어주세요.");
+			
+			System.out.println("입력이 끝났다면 quit을 입력해주세요.");
+		}
+	}
+	public void run() {
+		
+	}
+
+}

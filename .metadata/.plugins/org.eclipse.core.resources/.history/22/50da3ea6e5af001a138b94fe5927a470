@@ -1,0 +1,7 @@
+package wpg;
+
+public class ChildBuilder extends Builder{
+	
+	
+
+}

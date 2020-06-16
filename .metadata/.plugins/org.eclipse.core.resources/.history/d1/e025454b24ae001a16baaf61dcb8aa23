@@ -1,0 +1,14 @@
+package wpg;
+import java.util.Random;
+public class AddProblem extends Problem{
+
+	@Override
+	public String printProblem(OperandRange operandrange) {
+		
+		
+//		(이름) 은 (항목) 을 (숫자) 개 가지고 있습니다. (이름) 은 (항목) 을 (숫자)개 가지고 있습니다.
+//		그들이 가지고 있는 (항목)은 모두 몇 개입니까?
+		return null;
+	}
+
+}

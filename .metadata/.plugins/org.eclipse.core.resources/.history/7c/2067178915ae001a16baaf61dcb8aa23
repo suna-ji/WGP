@@ -1,0 +1,17 @@
+package wpg;
+import java.util.*;
+
+public class InteractionWithParent{
+	private Scanner scanner;
+	private Child child;
+	private Problem problem;
+	
+	public InteractionWithParent() {
+		scanner = new Scanner(System.in);
+	}
+	
+	public void run() {
+		ca
+	}
+
+}

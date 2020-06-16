@@ -1,0 +1,27 @@
+package wpg;
+
+public class ChildBuilder extends Builder{
+
+	@Override
+	public void setName(String name) {
+		
+		
+	}
+
+	@Override
+	public void setImportantPeople() {
+		
+	}
+
+	@Override
+	public void setImportantThings() {
+		
+	}
+
+	@Override
+	public Object getResult() {
+	}
+	
+	
+
+}

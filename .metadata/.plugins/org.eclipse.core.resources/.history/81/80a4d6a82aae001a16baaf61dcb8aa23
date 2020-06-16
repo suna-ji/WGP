@@ -1,0 +1,20 @@
+package wpg;
+
+import java.util.Random;
+
+public class DivProblem extends Problem{
+	@Override
+	public void printProblem(Child child, OperandRange operandRange) {
+		Random random = new Random();
+		int operand1 = random.nextInt(operandRange.end) + operandRange.start; 
+		int operand2 = random.nextInt(operandRange.end) + operandRange.start;
+		int iPersonNum = child.getImportantPeopleLength();
+		String iThing = child.getImportantThing();
+		
+	    String problemString = child.getName() + "은" + iThing + "을" + operand1 +"개 가지고 있습니다." +
+	                           "(그/그녀)는" +iPersonNum+ "의 친구에게 똑같이 나누어 주고 싶습니다. 각각" + 
+	                           iThing + "을 몇 개씩 가지게 되나요?";
+	    System.out.println(problemString);
+	}
+
+}

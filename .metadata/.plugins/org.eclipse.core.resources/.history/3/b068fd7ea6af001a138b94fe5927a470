@@ -1,0 +1,10 @@
+package wpg;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class WorkBook {
+	private ArrayList<AddProblem> AddProblems;
+	private ArrayList<SubProblem> SubProblems;
+	private ArrayList<MulProblem> MulProblems;
+	private ArrayList<DivProblem> DivProblems;
+}

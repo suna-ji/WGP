@@ -1,0 +1,12 @@
+package wpg;
+
+public abstract class Problem {
+	private Child child;
+	public int problmeNum;
+	public 
+	//	피연산자 범위(시작, 끝) 은 같이 있는 것이 자연스러운 파라미터 이다.
+	//	따라서 객체로 묶고 객체로 전달하도록 설계하였다.
+	
+	// 문제에 들어갈 내용?
+	public abstract String printProblem(OperandRange operandrange); // 템플릿에 맞춰서 프린트(추상메서드)
+}

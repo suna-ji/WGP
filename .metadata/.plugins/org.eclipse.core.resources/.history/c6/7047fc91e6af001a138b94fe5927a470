@@ -1,0 +1,30 @@
+package wpg;
+import java.util.*;
+
+public class ChildBuilder extends Builder{
+	private Scanner scanner;
+	private Child child = new Child();
+	@Override
+	public void setName() {
+		System.out.println("자녀의 이름을 입력해주세요.");
+		String childName = scanner.nextLine();
+		child.setName(childName);
+	}
+
+	@Override
+	public void setImportantPeople() {
+		
+	}
+
+	@Override
+	public void setImportantThings() {
+		
+	}
+
+	@Override
+	public Object getResult() {
+	}
+	
+	
+
+}

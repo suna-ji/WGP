@@ -1,0 +1,10 @@
+package wpg;
+
+public abstract class Builder {
+	public abstract void setName();
+	public abstract void setImportantPeople();
+	public abstract void setImportantThings();
+	public abstract Object getResult();
+	// 나중에 child객체에 성별, 연령대, 선호과목 등을 확장하기가 쉬워짐
+
+}

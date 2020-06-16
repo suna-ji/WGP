@@ -1,0 +1,28 @@
+package wpg;
+import java.util.Random;
+import java.util.Random;
+
+public abstract class Problem {
+	private String myDescription; 
+	protected int operand1;
+	protected int operand2;
+	public int answer;
+	
+	Random random = new Random();
+	
+	public Problem(String myDescription) {
+		this.myDescription  = myDescription;
+		operand1 = getOperand(opRange);
+		operand2 = getOperand(opRange);
+	}
+	public int getOperand(OperandRange opRange) {
+		 return random.nextInt(opRange.end) + opRange.start; 
+	}
+	public String getDescription() {
+		return myDescription;
+	}
+	public abstract void setAnswer();
+	public abstract void printProblem(Child child); // 템플릿에 맞춰서 프린트(추상메서드)
+	//	피연산자 범위(시작, 끝) 은 같이 있는 것이 자연스러운 파라미터 이다.
+	//	따라서 객체로 묶고 객체로 전달하도록 설계하였다.
+}

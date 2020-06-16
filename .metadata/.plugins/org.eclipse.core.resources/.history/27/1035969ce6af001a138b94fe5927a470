@@ -1,0 +1,12 @@
+package wpg;
+
+public class MainWPG {
+	public static void main(String[] args) throws DuplicateException, RangeException {
+		InteractionWithParent iwp = new InteractionWithParent();
+		Director director = new Director(new ChildBuilder());
+		Child child = (Child)director.construct();
+		iwp.run();
+		
+	}
+
+}

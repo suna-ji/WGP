@@ -1,0 +1,10 @@
+package wpg;
+
+public class SubProblem extends Problem{
+	@Override
+	public String printProblem(Child child, OperandRange operandRange) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

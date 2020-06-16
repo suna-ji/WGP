@@ -1,0 +1,11 @@
+package wpg;
+import java.util.*;
+
+public class ProblemInteraction{
+	private Scanner scanner;
+	private Problem problem;
+	
+	public Interaci
+	
+
+}

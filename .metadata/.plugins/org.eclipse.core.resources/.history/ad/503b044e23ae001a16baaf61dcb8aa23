@@ -1,0 +1,10 @@
+package wpg;
+
+public class MulProblem extends Problem{
+	@Override
+	public String printProblem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

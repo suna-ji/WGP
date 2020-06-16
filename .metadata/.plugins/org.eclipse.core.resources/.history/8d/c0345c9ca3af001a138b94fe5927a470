@@ -1,0 +1,116 @@
+package wpg;
+import java.util.*;
+
+import roulette.Bet;
+import roulette.BlackOrGreenBet;
+import roulette.MultiplesOfThreeBet;
+import roulette.OddOrEvenBet;
+import roulette.RedOrBlackBet;
+import roulette.RedOrGreenBet;
+import roulette.ThreeInARowBet;
+
+public class InteractionWithParent{
+	private Scanner scanner;
+	private Child child;
+	private Problem[] myPossibleProblems = {
+			new AddProblem("더하기 문제"),
+			new SubProblem("빼기 문제"),
+			new MulProblem("곱하기 문제"),
+			new DivProblem("나누기 문제")
+	};
+	private ArrayList<Problem> workBook;
+	private ArrayList<Integer> selectedOperationType;
+	// 멤버변수
+	public InteractionWithParent() {
+		scanner = new Scanner(System.in);
+	}
+	// 생성자
+	
+	public String getChildName() {
+		System.out.println("자녀의 이름을 입력해주세요.");
+		String childName = scanner.nextLine();
+		return childName;
+	}
+	
+	public void getImportantPeople() {
+		
+		System.out.println("자녀에게 중요한 사람들의 이름을 적어주세요. 입력이 끝났다면 quit를 입력해주세요.");
+		String response = scanner.nextLine();
+		while(!"quit".equalsIgnoreCase(response)) {
+			System.out.println("입력이 끝나지 않았다면 다시 이름을 적어주세요. 만약, 입력이 끝났다면 quit를 입력해주세요.");
+			String importantPersonName = scanner.nextLine();
+			child.setImportantPeople(importantPersonName);	
+		}
+	}
+	
+	public void getImportantThings() {
+		System.out.println("자녀가 관심을 갖고 있는 항목의 이름을 적어주세요. 입력이 끝났다면 quit를 입력해주세요.");
+		String response = scanner.nextLine();
+		while(!"quit".equalsIgnoreCase(response)) {
+			System.out.println("입력이 끝나지 않았다면 다시 적어주세요. 만약, 입력이 끝났다면 quit를 입력해주세요.");
+			String importantThingName = scanner.nextLine();
+			child.setImportantThings(importantThingName);
+		}
+	}
+	// 자녀에 대한 Interaction
+	public void checkAndAdd(Integer whichProblem) throws DuplicateException, RangeException {
+		if(selectedOperationType.contains(whichProblem)) {
+			throw new DuplicateException("이미 선택한 옵션입니다.");
+		}
+		if(whichProblem >= 1 && whichProblem <= myPossibleProblems.length) {
+			throw new RangeException("범위를 벗어났습니다. 다시 선택해주세요.");
+		}
+		else {
+			selectedOperationType.add(whichProblem);
+		}
+	}
+	// 1. 문제유형
+	private int getOperationType() { 
+		System.out.println("아래의 연산중에 선택해주세요:");
+		for (int k = 0; k < myPossibleProblems.length; k++) {
+			System.out.println((k + 1) + ") "
+					+ myPossibleProblems[k].getDescription());
+		}
+		int whichProblem = scanner.nextInt();
+		
+		selectedOperationType.add(whichProblem);
+		while(0!=whichProblem) {
+			if(whichProblem >= 1 && whichProblem <= myPossibleProblems.length) {
+				selectedOperationType.add(whichProblem);
+			}else {
+				System.out.println("범위를 벗어났습니다. 다시 선택해주세요.");
+			}// 코드중복 있음...어쩌지..
+			System.out.println("선택이 끝나지 않았다면 다시 선택해주세요. 만약, 선택이 끝났다면 0 입력해주세요.");
+			whichProblem = scanner.nextInt();
+			
+		}
+		int whichProblem = scanner.nextInt();
+		
+		
+	}
+	// 2. 문제 개수
+	public int getProblemNum() {
+		System.out.println("몇개의 문제를 생성할까요?");
+		int problemNum = scanner.nextInt();
+		return problemNum;
+		
+	}
+	public int getOperandRange() {
+		
+	}
+	
+	// 3. 피연산자의 범위
+	// 문제에 대한 Interaction
+	public void run() {
+		// getChildName()메서드로 name얻어서 child객체 생성
+		child = new Child(getChildName());
+		getImportantPeople();
+		getImportantThings();
+		problem[getOperationType()]
+		
+		
+		
+		
+	}
+
+}
