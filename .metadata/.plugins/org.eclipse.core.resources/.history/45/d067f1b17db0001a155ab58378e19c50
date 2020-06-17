@@ -12,7 +12,7 @@ public class InteractionWithParent{
 
 	// 자녀에 대한 Interaction -(1) 이름
 	public void getChildName() {
-		System.out.println("자녀의 이름을 입력해주세요.");
+		System.out.println("자녀의 이름을 입력해주세요.");
 		String childName = scanner.nextLine();
 		child.setName(childName);
 	}

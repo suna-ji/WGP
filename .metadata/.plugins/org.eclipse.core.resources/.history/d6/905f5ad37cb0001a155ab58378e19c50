@@ -12,13 +12,13 @@ public class InteractionWithParent{
 
 	// 자녀에 대한 Interaction -(1) 이름
 	public void getChildName() {
-		System.out.println("자녀의 이름을 입력해주세요.");
+		System.out.println("자녀의 이름을 입력해주세요.");
 		String childName = scanner.nextLine();
 		child.setName(childName);
 	}
 	// 자녀에 대한 Interaction -(2) 중요한 사람
 	public void getImportantPeople() {
-		System.out.println("자녀에게 중요한 사람들의 이름을 적어주세요.");
+		System.out.println("자녀에게 중요한 사람들의 이름을 적어주세요. 입력이 끝났다면 quit를 입력해주세요.");
 		String response = null;
 		while(!"quit".equalsIgnoreCase(response)) {
 			response = scanner.nextLine();
@@ -31,7 +31,7 @@ public class InteractionWithParent{
 	}
 	// 자녀에 대한 Interaction -(2) 중요한 것들
 	public void getImportantThings() {
-		System.out.println("자녀가 관심을 갖고 있는 항목의 이름을 적어주세요.");
+		System.out.println("자녀가 관심을 갖고 있는 항목의 이름을 적어주세요. 입력이 끝났다면 quit를 입력해주세요.");
 		String response = null;
 		while(!"quit".equalsIgnoreCase(response)) {
 			response = scanner.nextLine();
