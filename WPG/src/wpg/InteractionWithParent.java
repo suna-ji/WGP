@@ -4,12 +4,14 @@ import java.util.*;
 public class InteractionWithParent{
 	private Scanner scanner;
 	private Child child;
-	private Problem[] myPossibleProblems = {
-			new AddProblem("더하기 문제"),
-			new SubProblem("빼기 문제"),
-			new MulProblem("곱하기 문제"),
-			new DivProblem("나누기 문제"),
-	};
+	private ProblemFactory pfactory = new ProblemFactory();
+	private HashMap myPossibleProblems = new HashMap();
+	{
+		myPossibleProblems.put(0, "더하기 문제");
+		myPossibleProblems.put(1, "빼기 문제");
+		myPossibleProblems.put(2, "곱하기 문제");
+		myPossibleProblems.put(3, "나누기 문제");
+    }
 	private ArrayList<Problem> workBook = new ArrayList<Problem>();
 	private ArrayList<Integer> selectedOperationType = new ArrayList<Integer>();
 	// 멤버변수
@@ -56,7 +58,7 @@ public class InteractionWithParent{
 				throw new DuplicateException("이미 선택한 옵션입니다.");
 			}
 		}
-		if(whichProblem < 1 || whichProblem > myPossibleProblems.length) {
+		if(whichProblem < 1 || whichProblem > myPossibleProblems.size()) {
 			throw new RangeException("범위를 벗어났습니다. 다시 선택해주세요.");
 		}
 		else {
@@ -67,8 +69,8 @@ public class InteractionWithParent{
 	// 1. 문제유형
 	private void getOperationType() throws DuplicateException, RangeException { 
 		System.out.println("아래의 연산중에 선택해주세요:");
-		for (int k = 0; k < myPossibleProblems.length; k++) {
-			System.out.println((k + 1) + ") " + myPossibleProblems[k].getDescription());
+		for (int k = 0; k < myPossibleProblems.size(); k++) {
+			System.out.println((k + 1) + ") " + myPossibleProblems.get(k));
 		}
 		int whichProblem = scanner.nextInt();
 		while(0!=whichProblem) {
@@ -102,25 +104,28 @@ public class InteractionWithParent{
 		int problemNum = getProblemNum(); // 몇개
 		OperandRange opRange = getOperandRange(); //피연산자 범위는 어디까지
 		
-		
 		// 입력받은 정보를 바탕으로 문제집 생성
 		for(int i = 0; i < selectedOperationType.size(); i++) {
 			int j = selectedOperationType.get(i);
 			for(int k = 0; k < problemNum; k++) {
-				myPossibleProblems[j].setOperand(opRange);
-				workBook.add(myPossibleProblems[j]);
+				Problem problem = pfactory.getProblem(j);
+				problem.setOperand(opRange);
+				problem.setAnswer();
+				workBook.add(problem);
 			}
 		}
 		
 		// 문제풀이 시작
 		for(int i = 0; i < workBook.size(); i++) {
+			System.out.print(i+1 + ")");
 			workBook.get(i).printProblem(child);
 			int studentAnswer = scanner.nextInt();
 			if(studentAnswer == workBook.get(i).answer) {
 				System.out.println("정답입니다!");
 			}else {
-				System.out.println("틀렸습니다ㅠㅠ 정답은" + workBook.get(i).answer +"입니다.");
+				System.out.println("틀렸습니다! 정답은" + workBook.get(i).answer +"입니다.");
 			}
+		     
 		}
 		
 	}

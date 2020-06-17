@@ -1,9 +1,0 @@
-package wpg;
-import java.util.*;
-
-public class InteractionWithParent {
-	private Scanner scanner;
-	
-	
-
-}

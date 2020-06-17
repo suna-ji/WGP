@@ -1,0 +1,24 @@
+package wpg;
+public enum ProblemID {ADD, SUB, DIV, MUL}
+
+public class ProblemFactory {
+	public static Problem getProblem(ProblemID pID) {
+		Problem problem = null;
+		switch(pID) {
+		case ADD:
+			problem = new AddProblem();
+			break;
+		case SUB:
+			problem = new SubProblem();
+			break;
+		case DIV:
+			problem = new DivProblem();
+			break;
+		case MUL:
+			problem = new MulProblem();
+			break;
+		}
+		
+	}
+
+}

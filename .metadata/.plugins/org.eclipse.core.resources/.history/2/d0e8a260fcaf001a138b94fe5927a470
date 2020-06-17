@@ -1,0 +1,25 @@
+package wpg;
+
+
+public class ProblemFactory {
+	public static Problem getProblem(ProblemID pID) {
+		Problem problem = null;
+		switch(pID) {
+			case ADD:
+				problem = new AddProblem("더하기 문제");
+				break;
+			case SUB:
+				problem = new SubProblem();
+				break;
+			case DIV:
+				problem = new DivProblem();
+				break;
+			case MUL:
+				problem = new MulProblem();
+				break;
+		}
+		return problem;
+		
+	}
+
+}

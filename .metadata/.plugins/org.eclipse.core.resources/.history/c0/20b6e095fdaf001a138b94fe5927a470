@@ -1,0 +1,9 @@
+package wpg;
+
+public enum ProblemID {
+	ADD,
+	SUB,
+	DIV,
+	MUL
+
+}
