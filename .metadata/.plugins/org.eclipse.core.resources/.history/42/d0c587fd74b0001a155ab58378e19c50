@@ -12,6 +12,7 @@ public class SubProblem extends Problem{
 	                           child.getName() + "은 " + iPerson+ "에게 " + iThing + operand2 + "개를 주었습니다. "+
 	                           child.getName()+ "에게 몇 개의 " + iThing + "가 남았습니까?";                   
 	    System.out.println(problemString);
+	    setAnswer();
 	}
 	
 	public void setAnswer() {

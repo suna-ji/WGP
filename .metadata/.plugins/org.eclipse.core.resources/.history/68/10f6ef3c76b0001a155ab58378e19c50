@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class InteractionWithChild {
 	private Scanner scanner;
 	
-	public InteractionWithChild() {
+	public void InteractionWithChild() {
 		scanner = new Scanner(System.in);
 	}
 	

@@ -14,7 +14,7 @@ public class DivProblem extends Problem{
 	}
 	
 	public void setAnswer() {
-	    answer = operand1 / operand2;
+		(float)answer = (float)(operand1 / operand2);
 	}
 
 }

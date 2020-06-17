@@ -11,10 +11,11 @@ public class DivProblem extends Problem{
 	                           "(그/그녀)는 " +operand2+ "의 친구에게 똑같이 나누어 주고 싶습니다. 각각 " + 
 	                           iThing + "을 몇 개씩 가지게 되나요?";
 	    System.out.println(problemString);
+	    setAnswer();
 	}
 	
 	public void setAnswer() {
-	    answer = operand1 / operand2;
+	    float answer = operand1 / operand2;
 	}
 
 }
