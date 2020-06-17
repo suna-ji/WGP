@@ -1,7 +1,6 @@
 package wpg;
 
 public class MulProblem extends Problem{
-	
 	public MulProblem(String myDescription) {
 		super(myDescription);
 	}

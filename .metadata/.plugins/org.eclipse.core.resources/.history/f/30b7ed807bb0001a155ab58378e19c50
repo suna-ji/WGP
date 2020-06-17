@@ -25,7 +25,7 @@ public class DivProblem extends Problem{
 	}
 	
 	public void setAnswer() {
-		if(isDenominatorZero()) {
+		if(operand2 == 0) {
 			operand2 = 1;
 		}
 		double temp = (double)operand1 / operand2;

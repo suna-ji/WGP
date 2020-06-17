@@ -1,0 +1,27 @@
+package wpg;
+
+public class OperandRange {
+	public int start;
+	public int end;
+	
+	OperandRange(int start, int end){
+		this.start = start;
+		this.end = end;
+	}
+	public void setStart(int start, int type) {
+		if(type == 4 && start == 0) {
+			System.out.println("나누기의 피연산자는 0을 포함할 수 없습니다. 1로 설정하겠습니다.")
+		}
+		this.start = start;
+	}
+	public void setEnd(int end) {
+		this.end = end;
+	}
+	public int getStart() {
+		return start;
+	}
+	public int getEnd() {
+		return end;
+	}
+
+}

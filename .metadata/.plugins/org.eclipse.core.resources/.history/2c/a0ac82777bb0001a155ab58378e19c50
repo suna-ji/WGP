@@ -7,14 +7,14 @@ public class DivProblem extends Problem{
 	}
 	public boolean isDenominatorZero() {
 		if(operand2 == 0) {
-			return true;
+			return 1;
 		}else {
-			return false;
+			return 0;
 		}
 	}
 	@Override
 	public void printProblem(Child child) {
-		if(isDenominatorZero()) {
+		if(isDenominatorZero) {
 			operand2 = 1;
 		}
 		String iThing = child.getImportantThing();
@@ -25,7 +25,7 @@ public class DivProblem extends Problem{
 	}
 	
 	public void setAnswer() {
-		if(isDenominatorZero()) {
+		if(operand2 == 0) {
 			operand2 = 1;
 		}
 		double temp = (double)operand1 / operand2;

@@ -6,7 +6,7 @@ public abstract class Problem { // 템플릿 메서드 패턴 적용// 팩토리
 	String myDescription;
 	protected int operand1;
 	protected int operand2;
-    public double answer;
+//	public int answer;
 	
 	Random random = new Random();
 	
