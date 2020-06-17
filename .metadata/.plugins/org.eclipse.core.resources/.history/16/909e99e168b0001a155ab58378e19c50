@@ -1,0 +1,15 @@
+package wpg;
+
+public class MainWPG {
+	public static void main(String[] args) throws DuplicateException, RangeException {
+		InteractionWithParent iwp = new InteractionWithParent();
+		GenerateWorkBook gwb = new GenerateWorkBook();
+		iwp.interactionAboutChild();
+		int problemNum = iwp.getProblemNum();
+		OperandRange opRange = iwp.getOperandRange();
+		
+		
+		
+	}
+
+}

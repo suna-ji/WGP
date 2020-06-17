@@ -9,8 +9,7 @@ public class Child {
 	private ArrayList<String> importantThings; // 자녀가 관심을 갖고 있는 항목의 이름 (예: 인형, 책, 축구공, 비디오 게임)
 	
 	
-	public Child(String name) { //생성자
-		this.name = name;
+	public Child() { //생성자
 		this.importantPeople = new ArrayList<String>();
 		this.importantThings = new ArrayList<String>();
 	}

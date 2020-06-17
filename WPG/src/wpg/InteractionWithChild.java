@@ -1,0 +1,25 @@
+package wpg;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class InteractionWithChild {
+	private Scanner scanner;
+	
+	public void InteractionWithChild() {
+		scanner = new Scanner(System.in);
+	}
+	
+	public void run(ArrayList<Problem> workBook, Child child) {
+		for(int i = 0; i < workBook.size(); i++) {
+			System.out.print(i+1 + ")");
+			workBook.get(i).printProblem(child);
+			int studentAnswer = scanner.nextInt();
+			if(studentAnswer == workBook.get(i).answer) {
+				System.out.println("정답입니다!");
+			}else {
+				System.out.println("틀렸습니다! 정답은" + workBook.get(i).answer +"입니다.");
+			}   
+		}
+	}
+}
